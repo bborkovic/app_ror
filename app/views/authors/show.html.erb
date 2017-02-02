@@ -1,0 +1,21 @@
+<h1>Authors#show</h1>
+
+
+<%= link_to("Back to list" , authors_path, :class => 'back-link') %>
+
+
+<table summary="Subject detail view">
+	<tr>
+		<th>ID:</th>
+		<td><%= @author.id %></td>
+	</tr>
+	<tr>
+		<th>First Name:</th>
+		<td><%= @author.first_name %></td>
+	</tr>
+	<tr>
+		<th>Last Name:</th>
+		<td><%= @author.last_name %></td>
+	</tr>
+</table>
+
