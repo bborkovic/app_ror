@@ -8,6 +8,8 @@ class AuthorsController < ApplicationController
 	end
 
 	def new
+		@varijabla1 = 100
+		@varijabla2 = 100
 	end
 
 	def edit
