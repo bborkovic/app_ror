@@ -1,4 +1,7 @@
 class AuthorsController < ApplicationController
+
+	# layout false
+
 	def index
 		@authors = Author.all
 	end
@@ -8,8 +11,10 @@ class AuthorsController < ApplicationController
 	end
 
 	def new
-		@varijabla1 = 100
-		@varijabla2 = 100
+		@author = Author.new
+	end
+
+	def create
 	end
 
 	def edit

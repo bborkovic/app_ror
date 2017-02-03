@@ -1,2 +1,20 @@
-<h1>Authors#new</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
+
+
+<div class="authors new">
+	<h2>New Author</h2>
+	<%= form_for(@author, :url => authors_path, :method => 'post') do |f|%>
+		<table summary="Subject form fields">
+			<tr>
+				<th>First name:</th>
+				<td><%= f.text_field(:first_name) %></td>
+			</tr>
+			<tr>
+				<th>Last name:</th>
+				<td><%= f.text_field(:last_name) %></td>
+			</tr>
+		</table>
+		<div class="form-buttons">
+			<%= f.submit("Create Author") %>	
+		</div>
+	<% end %>
+</div>
