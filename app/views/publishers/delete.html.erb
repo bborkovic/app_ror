@@ -1,0 +1,20 @@
+<h1>Publishers#delete</h1>
+
+<%= link_to("<< Back to List", publishers_path, :class => 'bask-link') %>
+
+<div class="publishers delete">
+	<h2>Delete Publisher</h2>
+
+	<%= form_for(@publisher, :url => publisher_path(@publisher), :method => 'delete') do |f| %>
+
+		<p>Are you sure you want to delete publisher</p>
+		<p class='reference-name'><%= @publisher.name %></p>
+
+		<div class="form-buttons">
+			<%= f.submit("Delete Author")%>
+		</div>
+
+	<% end %>
+
+
+</div>

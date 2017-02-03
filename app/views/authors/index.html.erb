@@ -1,15 +1,23 @@
 <h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+
+
+<% if( !flash[:notice].blank? )%>
+	<div class='notice'>
+		<%= flash[:notice]%>
+	</div>
+<% end%>
 
 
 <table>
 	<tr>
-		<th>Author Name</th>
+		<th>First Name</th>
+		<th>Last Name</th>
 		<th>Actions</th>
 	</tr>
 	<% @authors.each do |author| %>
 		<tr>
 			<td><%= author.first_name %></td>
+			<td><%= author.last_name %></td>
 			<td>
 				<%= link_to("Show", author_path(author)) %>
 				<%= link_to("Edit", edit_author_path(author)) %>
