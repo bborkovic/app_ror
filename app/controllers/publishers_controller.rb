@@ -1,6 +1,6 @@
 class PublishersController < ApplicationController
 
-	# layout false
+	layout 'admin'
 
 	def index
 		# 

@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
 
-	# layout false
+	layout 'admin'
 
 	def index
 		# 
@@ -19,11 +19,8 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(book_params)
-
 		if(@book.save)
-			# puts "***** create #{@book.inspect}"
-			puts "****"
-			flash[:notice] = "Book #{@book.first_name} has been created"
+			flash[:notice] = "Book #{@book.name} has been created"
 			redirect_to books_path
 		else
 			# error is raised
@@ -38,10 +35,9 @@ class BooksController < ApplicationController
 	def update
 		@book = Book.find(params[:id])
 		@book.update_attributes(book_params)
-
 		if ( @book.save)
-			flash[:notice] = "Book #{@book.first_name} has been updated"
-			redirect_to books_path # this is /books
+			flash[:notice] = "Book #{@book.name} has been updated"
+			redirect_to book_path # this is /books
 		else
 			render('edit')
 		end
@@ -60,7 +56,7 @@ class BooksController < ApplicationController
 
 	private
 		def book_params
-		params.require(:book).permit(:first_name, :last_name)
+		params.require(:book).permit(:author_id, :publisher_id, :name, :description)
 		end
 
 end

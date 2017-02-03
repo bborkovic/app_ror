@@ -1,17 +1,17 @@
-<h1>Authors#delete</h1>
+<h1>Delete Book</h1>
 
-<%= link_to("<< Back to List", authors_path, :class => 'bask-link') %>
+<%= link_to("<< Back to List", books_path, :class => 'bask-link') %>
 
-<div class="authors delete">
-	<h2>Delete Author</h2>
+<div class="books delete">
+	<h2>Delete Book</h2>
 
-	<%= form_for(@author, :url => author_path(@author), :method => 'delete') do |f| %>
+	<%= form_for(@book, :url => book_path(@book), :method => 'delete') do |f| %>
 
-		<p>Are you sure you want to delete author</p>
-		<p class='reference-name'><%= @author.first_name + ' ' + @author.last_name %></p>
+		<p>Are you sure you want to delete book</p>
+		<p class='reference-name'><%= @book.name %></p>
 
 		<div class="form-buttons">
-			<%= f.submit("Delete Subject")%>
+			<%= f.submit("Delete Book")%>
 		</div>
 
 	<% end %>

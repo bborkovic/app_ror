@@ -1,20 +1,30 @@
-<h1>Books#edit</h1>
+<h1>Edit Book</h1>
 
-<div class="authors edit">
-	<h2>Edit Author</h2>
-	<%= form_for(@author) do |f|%>
-		<table summary="Subject form fields">
+<div class="books edit">
+	<h2>Edit Book</h2>
+	<%= form_for(@book) do |f|%>
+		<table summary="Book form fields">
 			<tr>
-				<th>First name:</th>
-				<td><%= f.text_field(:first_name) %></td>
+				<th>Publisher:</th>
+				<td><%= f.collection_select(:publisher_id, Publisher.all, :id, :name) %></td>
+				<td><%= link_to("Add publisher", edit_publisher_path)%></td>
 			</tr>
 			<tr>
-				<th>Last name:</th>
-				<td><%= f.text_field(:last_name) %></td>
+				<th>Author:</th>
+				<td><%= f.collection_select(:author_id, Author.all, :id, :full_name) %></td>
+				<td><%= link_to("Add author", new_author_path)%></td>
+			</tr>
+			<tr>
+				<th>Name:</th>
+				<td><%= f.text_field(:name) %></td>
+			</tr>
+			<tr>
+				<th>Description:</th>
+				<td><%= f.text_area(:description) %></td>
 			</tr>
 		</table>
 		<div class="form-buttons">
-			<%= f.submit("Update Author") %>	
+			<%= f.submit("Edit Book") %>
 		</div>
 	<% end %>
 </div>

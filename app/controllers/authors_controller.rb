@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
 
-	# layout false
+	layout 'admin'
 
 	def index
 		# 
@@ -60,7 +60,8 @@ class AuthorsController < ApplicationController
 
 	private
 		def author_params
-		params.require(:author).permit(:first_name, :last_name)
+			#
+			params.require(:author).permit(:first_name, :last_name)
 		end
 
 end
