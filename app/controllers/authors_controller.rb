@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
 
-	layout 'admin'
+	# layout 'admin'
 
 	def index
 		# 
