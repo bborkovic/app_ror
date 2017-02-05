@@ -3,18 +3,22 @@
 <div class="authors edit">
 	<h2>Edit Author</h2>
 	<%= form_for(@author) do |f|%>
-		<table summary="Subject form fields">
-			<tr>
-				<th>First name:</th>
-				<td><%= f.text_field(:first_name) %></td>
-			</tr>
-			<tr>
-				<th>Last name:</th>
-				<td><%= f.text_field(:last_name) %></td>
-			</tr>
-		</table>
-		<div class="form-buttons">
-			<%= f.submit("Update Author") %>	
+
+		<div class="form-group">
+			<label>First Name</label>
+			<%= f.text_field(:first_name, :class => "form-control") %><br/>
 		</div>
+
+		<div class="form-group">
+			<label>Last Name</label>
+			<%= f.text_field(:last_name, :class => "form-control")%><br/>
+		</div>
+		
+
+		<!-- </div> -->
+
+		<%= f.submit("Create Author", :class => 'btn btn-primary') %>
+		<%= link_to("Cancel", authors_path, :class => 'btn btn-default') %>
+
 	<% end %>
 </div>

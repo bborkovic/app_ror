@@ -1,20 +1,20 @@
-<h1>New Author</h1>
-
-<div class="authors new">
 	<h2>New Author</h2>
 	<%= form_for(@author, :url => authors_path, :method => 'post') do |f|%>
-		<table summary="Subject form fields">
-			<tr>
-				<th>First name:</th>
-				<td><%= f.text_field(:first_name) %></td>
-			</tr>
-			<tr>
-				<th>Last name:</th>
-				<td><%= f.text_field(:last_name) %></td>
-			</tr>
-		</table>
-		<div class="form-buttons">
-			<%= f.submit("Create Author") %>	
+
+		<div class="form-group">
+			<label>First Name</label>
+			<%= f.text_field(:first_name , :class => "form-control") %><br/>
 		</div>
+
+		<div class="form-group">
+			<label>Last Name</label>
+			<%= f.text_field(:last_name, :class => "form-control")%><br/>
+		</div>
+		
+
+		<!-- </div> -->
+
+		<%= f.submit("Create Author", :class => 'btn btn-primary') %>
+		<%= link_to("Cancel", authors_path, :class => 'btn btn-default') %>
+
 	<% end %>
-</div>

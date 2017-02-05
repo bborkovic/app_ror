@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
-	layout 'admin'
+	# layout 'admin'
+	before_action :set_page_title!
 
 	def index
 		# 
@@ -59,4 +60,7 @@ class BooksController < ApplicationController
 		params.require(:book).permit(:author_id, :publisher_id, :name, :description)
 		end
 
+		def set_page_title!
+			@page_title = "Books"
+		end
 end

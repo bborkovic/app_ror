@@ -1,6 +1,7 @@
 class AuthorsController < ApplicationController
 
 	# layout 'admin'
+	before_action :set_page_title
 
 	def index
 		# 
@@ -62,6 +63,10 @@ class AuthorsController < ApplicationController
 		def author_params
 			#
 			params.require(:author).permit(:first_name, :last_name)
+		end
+
+		def set_page_title
+			@page_title = "Authors"
 		end
 
 end

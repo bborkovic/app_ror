@@ -1,16 +1,16 @@
-<h1>New Publisher</h1>
-
-<div class="publishers new">
 	<h2>New Publisher</h2>
 	<%= form_for(@publisher, :url => publishers_path, :method => 'post') do |f|%>
-		<table summary="Subject form fields">
-			<tr>
-				<th>First name:</th>
-				<td><%= f.text_field(:name) %></td>
-			</tr>
-		</table>
-		<div class="form-buttons">
-			<%= f.submit("Create Publisher") %>	
+
+		<div class="form-group">
+			<label>First Name</label>
+			<%= f.text_field(:name , :class => "form-control") %><br/>
 		</div>
+
+
+
+		<!-- </div> -->
+
+		<%= f.submit("Create Publisher", :class => 'btn btn-primary') %>
+		<%= link_to("Cancel", publishers_path, :class => 'btn btn-default') %>
+
 	<% end %>
-</div>

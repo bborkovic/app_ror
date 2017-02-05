@@ -1,0 +1,17 @@
+<h2>Edit Book</h2>
+
+<div class="books edit">
+	<%= bootstrap_form_for(@book) do |f|%>
+		<div class="form-group">
+			<%= f.collection_select(:publisher_id, Publisher.all, :id, :name) %>
+			<%= f.collection_select(:author_id, Author.all, :id, :full_name) %>
+			<%= f.text_field(:name) %>
+			<%= f.text_area(:description, :size => "40x10") %>
+		</div>
+
+		<div class="form-buttons">
+			<%= f.submit("Save" , :class => 'btn btn-primary') %>
+			<%= link_to("Cancel" , books_path, :class => 'btn btn-default') %>
+		</div>
+	<% end %>
+</div>
