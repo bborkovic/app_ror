@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: app_ror
-  username: app_ror
-  password: <%= ENV['APP_ROR_DATABASE_PASSWORD'] %>
+  username: rails_user
+  password: rails_user
+  # password: <%= ENV['APP_ROR_DATABASE_PASSWORD'] %>

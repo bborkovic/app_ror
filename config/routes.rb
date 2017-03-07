@@ -1,32 +1,12 @@
 Rails.application.routes.draw do
 
-  # get 'books/index'
+  root 'demo#index'
 
-  # get 'books/show'
-
-  # get 'books/new'
-
-  # get 'books/edit'
-
-  # get 'books/delete'
-
- #  get 'publishers/index'
-
- #  get 'publishers/show'
-
- #  get 'publishers/new'
-
- #  get 'publishers/edit'
-
- #  get 'publishers/delete'
-
-	# get 'authors/index'
-	# get 'authors/show'
-	# get 'authors/new'
-	# get 'authors/edit'
-	# get 'authors/delete'
-
-	# root 'demo#index'
+  get 'admin', :to => 'access#menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
 
 	resources :authors do
 		member do

@@ -1,6 +1,7 @@
 class PublishersController < ApplicationController
 
 	# layout 'admin'
+   before_action :set_page_title!
 
 	def index
 		# 
@@ -59,7 +60,11 @@ class PublishersController < ApplicationController
 
 	private
 		def publisher_params
-		params.require(:publisher).permit(:name)
+         params.require(:publisher).permit(:name)
 		end
+
+      def set_page_title!
+         @page_title = "Publishers"
+      end
 
 end

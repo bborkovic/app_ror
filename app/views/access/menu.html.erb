@@ -1,0 +1,12 @@
+<% @page_title = "Admin Menu" %>
+
+<div class="">Logged in as: </div>
+
+<div class="menu">
+  <ul>
+    <li><%= link_to("Manage Books", books_path) %></li>
+    <li><%= link_to("Manage Authors", authors_path) %></li>
+    <li><%= link_to("Manage Publishers", publishers_path) %></li>
+    <li><%= link_to("Logout", access_logout_path) %></li>
+  </ul>
+</div>
