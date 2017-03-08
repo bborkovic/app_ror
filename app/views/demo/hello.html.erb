@@ -1,2 +1,23 @@
 <h1>Demo#hello</h1>
 <p>Find me in app/views/demo/hello.html.erb</p>
+
+
+
+   <%= form_tag(demo_displayform_path, :method => 'post') do |f|%>
+
+      <div class="form-group">
+         <%= label_tag 'Name' %>
+         <%= text_field_tag 'name', '', class: "form-control" %><br/>
+      </div>
+
+      <div class="form-group">
+         <%= label_tag 'Value' %>
+         <%= text_field_tag 'value', '', class: "form-control" %><br/>
+      </div>
+
+   <%= submit_tag("Send", :class => 'btn btn-primary') %>
+   
+
+   <% end %>
+
+

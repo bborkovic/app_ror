@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
 
 	# layout 'admin'
+   before_action :confirm_logged_in, :except => [:index]
 	before_action :set_page_title!
 
 	def index

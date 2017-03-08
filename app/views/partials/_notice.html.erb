@@ -2,6 +2,10 @@
 	<div class="alert alert-danger"><%= flash[:alert] %></div>
 <% end %>
 
+<% if !flash[:error].blank? %>
+   <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+
 <% if !flash[:notice].blank? %>
 	<div class="alert alert-success"><%= flash[:notice] %></div>
 <% end %>
